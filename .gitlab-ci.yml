@@ -12,9 +12,10 @@ build-binaries:
   parallel:
     matrix:
       - FOO: x
-        BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices', 'jvm': '-v -ddump-splices'}"
+        BUILD_GHC_OPTIONS: |
+          ghc-options: {'jni': '-v -ddump-splices', 'jvm': '-v -ddump-splices'}
       - FOO: x
-        BUILD_GHC_OPTIONS: ""
+        BUILD_GHC_OPTIONS: " "
       #also try
       #  BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices'}"
   script:
