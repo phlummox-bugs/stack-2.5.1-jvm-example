@@ -18,6 +18,7 @@ build-binaries:
         ca-certificates \
         curl \
         gcc \
+	libc6-dev \
         libgmp-dev \
         libtinfo-dev \
         locales \
