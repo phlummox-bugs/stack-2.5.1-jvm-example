@@ -15,11 +15,15 @@ build-binaries:
       set -euxo pipefail
       apt-get update
       apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl \
         gcc \
         libgmp-dev \
         libtinfo-dev \
         locales
+
       locale-gen "en_US.UTF-8"
+
       export STACK_URL=https://github.com/commercialhaskell/stack/releases/download/v2.5.1/stack-2.5.1-linux-x86_64.tar.gz
       curl -L "${STACK_URL}" | tar xz --wildcards --strip-components=1 -C /usr/bin '*/stack'
       stack --resolver=lts-12 setup
