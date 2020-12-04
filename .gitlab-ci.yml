@@ -37,10 +37,6 @@ build-binaries:
       stack build --fast --dry-run
       stack build --fast
 
-run-tests:
-  stage: test
-  script:
-    - |
       LD_LIBRARY_PATH=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server:$LD_LIBRARY_PATH stack exec app > out
       if [ `cat out` == "1.2345" ] ; then
          echo "success";
@@ -48,4 +44,5 @@ run-tests:
          echo "failed, got" `cat out`;
          exit 1;
       fi
+
 
