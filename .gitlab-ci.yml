@@ -6,10 +6,14 @@ cache:
 
 stages:
 - build
-- test
 
 build-binaries:
   stage: build
+  parallel:
+    matrix:
+      - BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices', 'jvm': '-v -ddump-splices'}"
+      #- BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices'}"
+      - BUILD_GHC_OPTIONS: ""
   script:
     - echo "$CI_COMMIT_BRANCH"
     - |
@@ -34,6 +38,8 @@ build-binaries:
       curl -L "${STACK_URL}" | tar xz --wildcards --strip-components=1 -C /usr/bin '*/stack'
       stack --resolver=lts-12 setup
 
+      echo "${BUILD_GHC_OPTIONS}" >> stack.yaml
+      cat -n stack.yaml
       stack build --fast --dry-run
       stack build --fast
 
