@@ -12,8 +12,8 @@ extra-include-dirs:
 - /usr/lib/jvm/java-8-openjdk-amd64/include
 - /usr/lib/jvm/java-8-openjdk-amd64/include/linux
 
-ghc-options:
-  jni: -v -ddump-splices
-  jvm: -v -ddump-splices
+#ghc-options:
+#  jni: -v -ddump-splices
+#  jvm: -v -ddump-splices
 
 
