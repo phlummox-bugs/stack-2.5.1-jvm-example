@@ -32,6 +32,9 @@ build-binaries:
       curl -L "${STACK_URL}" | tar xz --wildcards --strip-components=1 -C /usr/bin '*/stack'
       stack --resolver=lts-12 setup
 
+      stack build --fast --dry-run
+      stack build --fast
+
 run-tests:
   stage: test
   script:
