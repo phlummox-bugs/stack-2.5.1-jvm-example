@@ -24,6 +24,7 @@ build-binaries:
         libtinfo-dev \
         locales \
         make \
+        openjdk-8-jdk-headless \
         openjdk-8-jre-headless \
         xz-utils
 
