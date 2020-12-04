@@ -1,3 +1,4 @@
+-- vim: ts=2 sw=2 et :
 cabal-version: 1.12
 name:           sample-jvm-package2020
 version:        5.3.0.0
@@ -27,7 +28,7 @@ executable app
       /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64
       /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server
   build-depends:
-      bad-package2020
+      sample-jvm-package2020
     , base >=4.7 && <5
     , jni
     , jvm
