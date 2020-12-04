@@ -1,3 +1,4 @@
+# vim: hlsearch sw=2 ts=2 et :
 image: ubuntu:xenial
 
 cache:
@@ -18,7 +19,7 @@ build-binaries:
         ca-certificates \
         curl \
         gcc \
-	libc6-dev \
+        libc6-dev \
         libgmp-dev \
         libtinfo-dev \
         locales \
