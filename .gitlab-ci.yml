@@ -11,9 +11,14 @@ build-binaries:
   stage: build
   parallel:
     matrix:
-      - BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices', 'jvm': '-v -ddump-splices'}"
-      #- BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices'}"
-      - BUILD_GHC_OPTIONS: ""
+      - FOO: x
+        BAR: y
+      - FOO: y
+        BAR: y
+      #variables:
+      #  - BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices', 'jvm': '-v -ddump-splices'}"
+      #  #- BUILD_GHC_OPTIONS: "ghc-options: {'jni': '-v -ddump-splices'}"
+      #  - BUILD_GHC_OPTIONS: ""
   script:
     - echo "$CI_COMMIT_BRANCH"
     - |
