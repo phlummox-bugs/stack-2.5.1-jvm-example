@@ -1,0 +1,19 @@
+resolver: lts-12.26
+
+packages:
+- .
+
+
+extra-lib-dirs:
+- /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64
+- /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server
+
+extra-include-dirs:
+- /usr/lib/jvm/java-8-openjdk-amd64/include
+- /usr/lib/jvm/java-8-openjdk-amd64/include/linux
+
+ghc-options:
+  jni: -v -ddump-splices
+  jvm: -v -ddump-splices
+
+
